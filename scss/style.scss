@@ -1,0 +1,692 @@
+@import "utilities/variables";
+
+* {
+    @include reset;
+
+}
+
+body {
+    background-color: $color-principal;
+
+}
+
+
+// header aplicable a todos los html salvo enlaces a las otras páginas
+
+header {
+    height: ($altura-frecuente)/2;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/DefPuebloCABA_-_Esquina_Homero_Manzi_Boedo.jpg/4592px-Mapcarta.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 39.95%;
+    background-position-x: 60%;
+    background-clip: inherit;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 5%;
+        color: rgb(5, 5, 5);
+        font-weight: bolder;
+        font-size: 40px;
+
+    }
+
+    .contenedor {
+        display: flex;
+        justify-content: space-around;
+
+        @keyframes girar {
+            from {
+                transform: isolate(0deg);
+
+            }
+
+            to {
+                transform: rotate(-360deg);
+
+            }
+
+        }
+
+        .contenedor__logo img {
+            animation-name: girar;
+            animation-iteration-count: infinite;
+            animation-duration: 25s;
+            margin-top: -30%;
+            margin-left: -100%;
+            border-radius: 100%;
+
+        }
+
+        ul {
+            padding-left: -5em;
+            display: flex;
+            justify-items: space-around;
+            background-color: rgb(128, 128, 128);
+            border-right: solid;
+            border-bottom: solid;
+            border-color: none;
+
+            li {
+                list-style: none;
+                border-right: solid;
+                border-color: none;
+                padding-right: 10px;
+                padding-left: 10px;
+
+                button {
+                    font-weight: bolder;
+                    background-color: grey;
+                    border: none;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+
+                    }
+
+                }
+
+            }
+
+            .contacto {
+                border-right: none;
+
+                button {
+                    font-weight: bolder;
+                    background-color: grey;
+                    border: none;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.general {
+    //grid
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "main""section";
+    background-color: $color-principal;
+
+    main {
+        grid-area: "main";
+        display: flex;
+        flex-flow: column;
+        padding-top: 5em;
+        height: $altura-frecuente *2.5;
+
+        .quienesSomos {
+            text-align: center;
+            padding-left: 3em;
+            margin-right: 3em;
+            padding-top: 2em;
+            padding-bottom: 10.9em;
+
+        }
+
+        .quienesSomos__titulo {
+            font-size: xx-large;
+            margin-top: 2vh;
+
+        }
+
+        .grupos {
+            h3 {
+                font-size: xx-large;
+                text-align: center;
+
+            }
+
+        }
+
+        .gruposLiterarios {
+            justify-content: center;
+            height: 70vh;
+            padding-top: 5em;
+            padding-bottom: 0.8em;
+
+            .boedo {
+                text-align: center;
+
+            }
+
+            .florida {
+                text-align: center;
+
+            }
+
+        }
+
+        .tango {
+            padding-bottom: 7.2em;
+            padding-top: 4em;
+
+            p {
+                text-align: center;
+                background: radial-gradient(circle, rgb(195, 207, 230), rgb(224, 208, 208));
+                padding-top: 2em;
+                margin-left: 6em;
+                margin-right: 8em;
+                border-radius: 20%;
+                border-left: solid;
+                border-right: solid;
+                border-width: 0.6em;
+
+            }
+
+        }
+
+    }
+
+    .imagenes {
+        //grid
+        grid-area: "section";
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "homeroManzi""robertoArlt""borges";
+        gap: 3em;
+        border-width: 0.4em;
+        height: 25em;
+        padding-top: 5em;
+        padding-right: 5em;
+
+        @keyframes girar2 {
+            from {
+                transform: isolate(0deg);
+
+            }
+
+            to {
+                transform: rotate(180deg);
+
+            }
+
+        }
+
+        .homeroManzi {
+            grid-area: "homeroManzi";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            margin-top: 8em;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            }
+
+        }
+
+        .robertoArlt {
+            grid-area: "robertoArlt";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                animation-name: girar2;
+                animation-iteration-count: 1;
+                animation-duration: 5s;
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection1 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            }
+
+        }
+
+        .borges {
+            grid-area: "borges";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            
+            }
+        }
+
+    }
+
+}
+
+
+main {
+    height: $altura-frecuente *2.5;
+    background-color: $color-principal;
+
+    .h2Jb {
+        padding-top: 2em;
+        text-align: center;
+        margin-bottom: 1em;
+
+    }
+
+    .soneto {
+        text-align: center;
+        margin-top: 5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-left: 4em;
+        margin-right: 4em;
+        border-radius: 10%;
+        border-left: solid;
+        border-right: solid;
+        border-width: 0.6em;
+
+    }
+
+    .librosJb {
+        .librosJb__h2 {
+            text-align: center;
+            padding-top: 3em;
+
+        }
+
+        .librosJb__carousel {
+            display: flex;
+            justify-content: center;
+
+            .carousel-inner {
+                width: 30em;
+            
+            }
+
+        }
+
+    }
+}
+
+.generalDos {
+    main {
+        background-color: $color-principal;
+        margin-top: -2em;
+        height: $altura-frecuente *2.9;
+
+        .h2Hm {
+            text-align: center;
+            padding-top: 2em;
+            margin: 1em;
+
+        }
+
+        .productosHomero {
+            @include flex;
+            justify-content: center;
+            gap: 6em;
+
+            .productosHomero__darienzo {
+                padding-bottom: 8.3em;
+
+                .logoHm {
+                    width: 20em;
+                    box-shadow: 5px 5px rgb(82, 78, 78);
+
+                }
+
+                .logoHm:hover {
+                    transform: scale(1.3);
+
+                }
+
+                .pHm {
+                    text-align: center;
+                    font-size: 2em;
+                    font-weight: bolder;
+
+                }
+
+                .buttonHm {
+                    margin-left: 2em;
+                    background-color: rgb(189, 175, 175);
+                    padding-left: 5em;
+                    padding-right: 5em;
+                    font-size: 1em;
+                    font-weight: bolder;
+                    border-color: rgb(173, 173, 224);
+
+                }
+
+            }
+
+            .productosHomero__troilo {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .porductosHomero__goyeneche {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .productosHomero__discepolo {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .productosHomero__disarli {
+                @extend .productosHomero__darienzo;
+
+            }
+
+        }
+
+    }
+
+}
+
+.container {
+    .row {
+        margin-top: 6em;
+        border-right: solid;
+        border-left: solid;
+        border-width: 0.4em;
+        border-radius: 10%;
+
+        .col-6 {
+            padding-left: 3em;
+            padding-right: 2em;
+            list-style: none;
+            text-align: center;
+            padding-top: 1em;
+
+        }
+
+        h2 {
+            height: 5em;
+
+        }
+
+    }
+
+}
+
+// footer aplicable a todos los html
+
+footer {
+    height: ($altura-frecuente)/15;
+    padding-bottom: 7em;
+    padding-top: 10em;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: $color-principal;
+
+    .footera {
+        text-align: center;
+
+
+        h4 {
+            font-size: small;
+
+        }
+
+        h5 {
+            font-size: x-small;
+            font-weight: bolder;
+
+        }
+
+    }
+
+    .footerImg {
+        width: 10em;
+
+        img {
+            width: 2em;
+            border: none;
+
+        }
+
+    }
+
+}
+
+.footerP {
+    height: ($altura-frecuente)/15;
+    padding-bottom: 7em;
+    padding-top: 22em;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: $color-principal;
+
+}
+
+@media (max-width:1100px)and(min-width:880px) {
+
+    header {
+
+        .contenedor {
+
+            ul {
+                margin-right: 7em;
+
+                li {
+                    button {
+                        padding-left: 1em;
+                        padding-right: 1em;
+
+                    }
+
+                }
+
+            }
+
+            .contenedor__logo {
+                height: 7em;
+                padding-left: 12em;
+                padding-top: 2em;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width:879px) {
+
+    header {
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+
+            ul {
+                display: flex;
+                flex-flow: column wrap;
+                background-color: gray;
+                height: 12hv;
+
+                li,
+                .contacto {
+                    text-align: center;
+                    padding-left: 2em;
+                    border-right: solid;
+
+                    button {
+                        margin-left: -2em;
+                        margin-right: 1em;
+                        padding: 0.2em;
+
+                    }
+
+                }
+
+            }
+
+            .contenedor__logo {
+
+                img {
+                    margin-left: 8em;
+                    margin-top: 0.5em;
+
+                }
+
+            }
+
+        }
+    }
+
+    .general {
+
+        margin-top: 7.5em;
+        display: flex;
+        flex-direction: column;
+
+        main {
+
+            margin-bottom: -25em;
+
+            .tango {
+                display: none;
+
+            }
+
+        }
+
+        .imagenes {
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 70em;
+            padding-left: 5em;
+            gap: 10em;
+
+            .robertoArlt,
+            .homeroManzi,
+            .borges {
+                border: none;
+
+            }
+
+        }
+
+    }
+
+    .generalDos {
+        main {
+
+            .h2Hm {
+                padding-top: 8em;
+
+            }
+
+        }
+
+    }
+
+    main {
+        margin-bottom: $altura-frecuente/1.45;
+
+        .h2Jb {
+            padding-top: 8em;
+
+        }
+
+        .librosJb {
+
+            .librosJb__carousel {
+                display: flex;
+                justify-content: center;
+
+                .carousel-inner {
+                    width: 20em;
+
+                }
+
+            }
+
+        }
+        
+    }
+
+    main {
+        form {
+            padding-top: 8em;
+
+        }
+
+    }
+
+    .container {
+        .row {
+            padding-top: 4em;
+            border-right: none;
+            border-left: none;
+            border-width: 0.4em;
+            border-radius: 10%;
+
+            .col-6 {
+                padding-left: 0;
+                padding-right: 0;
+                list-style: none;
+                text-align: center;
+
+            }
+
+        }
+
+    }
+}

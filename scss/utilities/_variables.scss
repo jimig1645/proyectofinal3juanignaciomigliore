@@ -1,0 +1,16 @@
+$color-principal: rgb(159, 177, 228);
+$altura-frecuente: 80vh;
+
+@mixin flex {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+}
+
+@mixin reset {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+
+}
